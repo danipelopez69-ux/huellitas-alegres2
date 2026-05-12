@@ -1,0 +1,2750 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Huellitas Alegres - Cuidado y Amor para tu Mascota</title>
+<meta content="Huellitas Alegres - Servicios profesionales de cuidado para mascotas en Bocagrande, Cartagena. Baño, corte, veterinaria y productos para tu perro." name="description">
+<link href="./Huellitas Alegres 1_files/css2" rel="stylesheet">
+<link href="./Huellitas Alegres 1_files/all.min.css" rel="stylesheet">
+<style>
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navegación */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff6b35;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-logo i {
+    font-size: 1.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #ff6b35;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ff6b35;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #ff6b35;
+    transition: transform 0.3s ease;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    min-width: 20px;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Carrito de Compras */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.cart-sidebar.active {
+    right: 0;
+}
+
+.cart-header {
+    padding: 2rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-header h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.cart-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #7f8c8d;
+}
+
+.cart-items {
+    padding: 1rem 2rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f1f2f6;
+}
+
+.cart-item-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cart-item-image .fallback-icon {
+    color: #ff6b35;
+    font-size: 1.5rem;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.cart-item-price {
+    color: #ff6b35;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.quantity-btn:hover {
+    background: #f8f9fa;
+}
+
+.quantity-display {
+    min-width: 40px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+
+.cart-footer {
+    padding: 2rem;
+    border-top: 1px solid #eee;
+    background: #f8f9fa;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.cart-total-price {
+    color: #ff6b35;
+    font-size: 1.5rem;
+}
+
+.cart-checkout {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6b35, #ffa726);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cart-checkout:hover {
+    transform: translateY(-2px);
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #7f8c8d;
+}
+
+.cart-empty i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #bdc3c7;
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.cart-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Sección Hero */
+.hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #fff5f0 0%, #ffe8d6 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.highlight {
+    color: #ff6b35;
+    position: relative;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b35, #ffa726);
+    border-radius: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: #5d6d7e;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff6b35, #ffa726);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #ff6b35;
+    border: 2px solid #ff6b35;
+}
+
+.btn-secondary:hover {
+    background: #ff6b35;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-avatar {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 8px solid white;
+    position: relative;
+    background: linear-gradient(45deg, #ff6b35, #ffa726);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-avatar::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #ff6b35, #ffa726, #ff6b35);
+    border-radius: 50%;
+    z-index: -1;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hero-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.hero-avatar .fallback-icon {
+    font-size: 8rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Secciones generales */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b35, #ffa726);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Sección About */
+.about {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #5d6d7e;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+}
+
+.skill-item i {
+    font-size: 1.5rem;
+    color: #ff6b35;
+}
+
+.skill-item span {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff6b35;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Sección Services */
+.services {
+    padding: 80px 0;
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f1f2f6;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #ff6b35, #ffa726);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff6b35, #ffa726);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.service-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.service-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ff6b35;
+    margin-bottom: 1.5rem;
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.service-features li {
+    padding: 0.5rem 0;
+    color: #5d6d7e;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.service-features li i {
+    color: #27ae60;
+    font-size: 0.9rem;
+}
+
+.add-to-cart {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6b35, #ffa726);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.add-to-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+.add-to-cart:active {
+    transform: translateY(0);
+}
+
+/* Sección Tienda */
+.shop {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.shop-categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.category-filter {
+    padding: 0.8rem 1.5rem;
+    background: #fff;
+    border: 2px solid #e9ecef;
+    border-radius: 25px;
+    color: #7f8c8d;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.category-filter:hover,
+.category-filter.active {
+    background: #ff6b35;
+    color: white;
+    border-color: #ff6b35;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #f1f2f6;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.product-image .fallback-icon {
+    font-size: 4rem;
+    color: #ff6b35;
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #ff6b35, #ffa726);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-category {
+    color: #ff6b35;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.product-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+}
+
+.product-description {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.price-current {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff6b35;
+}
+
+.price-original {
+    font-size: 1.1rem;
+    color: #95a5a6;
+    text-decoration: line-through;
+}
+
+.product-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-cart {
+    flex: 1;
+    background: linear-gradient(135deg, #ff6b35, #ffa726);
+    color: white;
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+.btn-wishlist {
+    width: 45px;
+    height: 45px;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7f8c8d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-wishlist:hover {
+    background: #ff6b35;
+    color: white;
+    border-color: #ff6b35;
+}
+
+/* Sección Precios */
+.prices {
+    padding: 80px 0;
+    background: white;
+}
+
+.prices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.price-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.price-card.featured {
+    border: 2px solid #ff6b35;
+    transform: scale(1.05);
+}
+
+.price-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.price-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ff6b35, #ffa726);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.price-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.currency {
+    font-size: 1.5rem;
+    color: #ff6b35;
+    font-weight: 600;
+}
+
+.amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-left: 0.2rem;
+}
+
+.price-description {
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.price-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.price-features li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f1f2f6;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.price-features li:last-child {
+    border-bottom: none;
+}
+
+.price-features i {
+    color: #27ae60;
+    font-size: 1.1rem;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #ff6b35;
+    border: 2px solid #ff6b35;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-outline:hover {
+    background: #ff6b35;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.additional-services {
+    background: #f8f9fa;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.additional-services h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+}
+
+.additional-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.additional-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    border-left: 4px solid #ff6b35;
+}
+
+.service-name {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.service-price {
+    font-weight: 700;
+    color: #ff6b35;
+    font-size: 1.1rem;
+}
+
+/* Sección Portfolio */
+.portfolio {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background: white;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-image {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.1);
+}
+
+.portfolio-image .fallback-icon {
+    font-size: 5rem;
+    color: #ff6b35;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 107, 53, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-info {
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.portfolio-info h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-info p {
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.portfolio-link {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-link:hover {
+    transform: scale(1.2);
+}
+
+/* Sección Contact */
+.contact {
+    padding: 80px 0;
+    background: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff6b35, #ffa726);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.contact-details h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+}
+
+.contact-details p {
+    color: #7f8c8d;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7f8c8d;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: linear-gradient(135deg, #ff6b35, #ffa726);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.contact-form {
+    background: #f8f9fa;
+    padding: 2.5rem;
+    border-radius: 15px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #ff6b35;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 3rem 0 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-info {
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ff6b35;
+    margin-bottom: 1rem;
+}
+
+.footer-logo i {
+    font-size: 2rem;
+}
+
+.footer-info p {
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.footer-contact {
+    margin-top: 1.5rem;
+}
+
+.footer-contact p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.footer-contact i {
+    color: #ff6b35;
+}
+
+.footer-paws {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-paws i {
+    font-size: 2rem;
+    color: #ff6b35;
+    animation: bounce 2s infinite;
+    opacity: 0.8;
+}
+
+.footer-paws .paw-1 { animation-delay: 0s; }
+.footer-paws .paw-2 { animation-delay: 0.2s; }
+.footer-paws .paw-3 { animation-delay: 0.4s; }
+.footer-paws .paw-4 { animation-delay: 0.6s; }
+.footer-paws .paw-5 { animation-delay: 0.8s; }
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.footer-bottom p {
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.whatsapp {
+    background: #25d366 !important;
+    color: white !important;
+}
+
+.whatsapp:hover {
+    background: #128c7e !important;
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Notificaciones */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    z-index: 10000;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    max-width: 300px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.notification.success {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+.notification.error {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.notification.info {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-avatar {
+        width: 250px;
+        height: 250px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .skills {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-stats {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    .about-stats {
+        flex-direction: column;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prices-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-card.featured {
+        transform: none;
+    }
+
+    .price-card.featured:hover {
+        transform: translateY(-10px);
+    }
+
+    .additional-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-paws {
+        gap: 1rem;
+    }
+
+    .footer-paws i {
+        font-size: 1.5rem;
+    }
+
+    .amount {
+        font-size: 2.5rem;
+    }
+
+    .shop-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shop-categories {
+        gap: 0.5rem;
+    }
+
+    .category-filter {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+    </style>
+<style>
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        </style></head>
+<body>
+<!-- Overlay del carrito -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<!-- Carrito de compras -->
+<div class="cart-sidebar" id="cartSidebar">
+<div class="cart-header">
+<h3>Mi Carrito</h3>
+<button class="cart-close" id="cartClose">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="cart-items" id="cartItems">
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="./Huellitas Alegres 1_files/1000_F_976292830_6bkdmJg9ifJsEZSA2YGNQuQeW9pT4R3P.jpg" alt="Baño y Secado" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;">
+                                <i class="fas fa-paw fallback-icon" style="display: none;"></i>
+                            </div>
+                            <div class="cart-item-info">
+                                <div class="cart-item-name">Baño y Secado</div>
+                                <div class="cart-item-price">$25.000</div>
+                                <div class="cart-item-controls">
+                                    <button class="quantity-btn" onclick="updateQuantity(&#39;bano-secado&#39;, -1)">-</button>
+                                    <span class="quantity-display">1</span>
+                                    <button class="quantity-btn" onclick="updateQuantity(&#39;bano-secado&#39;, 1)">+</button>
+                                    <button class="remove-item" onclick="removeFromCart(&#39;bano-secado&#39;)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="./Huellitas Alegres 1_files/free-photo-of-dog-getting-professional-haircut.jpeg" alt="Corte y Estilismo" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;">
+                                <i class="fas fa-paw fallback-icon" style="display: none;"></i>
+                            </div>
+                            <div class="cart-item-info">
+                                <div class="cart-item-name">Corte y Estilismo</div>
+                                <div class="cart-item-price">$35.000</div>
+                                <div class="cart-item-controls">
+                                    <button class="quantity-btn" onclick="updateQuantity(&#39;corte-estilismo&#39;, -1)">-</button>
+                                    <span class="quantity-display">1</span>
+                                    <button class="quantity-btn" onclick="updateQuantity(&#39;corte-estilismo&#39;, 1)">+</button>
+                                    <button class="remove-item" onclick="removeFromCart(&#39;corte-estilismo&#39;)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="./Huellitas Alegres 1_files/The_Importance_of_Nail_Care_480x480.png" alt="Cuidado de Uñas" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;">
+                                <i class="fas fa-paw fallback-icon" style="display: none;"></i>
+                            </div>
+                            <div class="cart-item-info">
+                                <div class="cart-item-name">Cuidado de Uñas</div>
+                                <div class="cart-item-price">$15.000</div>
+                                <div class="cart-item-controls">
+                                    <button class="quantity-btn" onclick="updateQuantity(&#39;cuidado-unas&#39;, -1)">-</button>
+                                    <span class="quantity-display">1</span>
+                                    <button class="quantity-btn" onclick="updateQuantity(&#39;cuidado-unas&#39;, 1)">+</button>
+                                    <button class="remove-item" onclick="removeFromCart(&#39;cuidado-unas&#39;)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<div class="cart-footer" id="cartFooter" style="display: block;">
+<div class="cart-total">
+<span>Total:</span>
+<span class="cart-total-price" id="cartTotal">$75.000</span>
+</div>
+<button class="cart-checkout" id="cartCheckout">
+<i class="fab fa-whatsapp"></i>
+                Finalizar Compra
+            </button>
+</div>
+</div>
+<!-- Navegación -->
+<nav class="navbar" style="background: rgba(255, 255, 255, 0.98); box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 20px;">
+<div class="nav-container">
+<div class="nav-logo">
+<a href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#home"><i class="fas fa-paw"></i> Huellitas Alegres</a>
+</div>
+<ul class="nav-menu">
+<li class="nav-item">
+<a class="nav-link" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#home">Inicio</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#about">Sobre Nosotros</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#services">Servicios</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#shop">Tienda</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#prices">Precios</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#gallery">Galería</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#contact">Contacto</a>
+</li>
+<li class="nav-item">
+<div class="cart-icon" id="cartIcon">
+<i class="fas fa-shopping-cart"></i>
+<span class="cart-count" id="cartCount" style="display: flex;">3</span>
+</div>
+</li>
+</ul>
+<div class="nav-toggle" id="mobile-menu">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
+</div>
+</nav>
+<!-- Sección Hero -->
+<section class="hero" id="home">
+<div class="hero-container">
+<div class="hero-content">
+<h1 class="hero-title">Bienvenido a <span class="highlight">Huellitas Alegres</span></h1>
+<p class="hero-subtitle">Cuidado profesional y amor para tu mejor amigo</p>
+<p class="hero-description">
+                    En Huellitas Alegres brindamos servicios especializados para el cuidado de tu mascota.
+                    Desde baños y cortes hasta cuidado veterinario, tu perro estará en las mejores manos.
+                </p>
+<div class="hero-buttons">
+<a class="btn btn-primary" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#services">Nuestros Servicios</a>
+<a class="btn btn-secondary" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#contact">Contactar</a>
+</div>
+</div>
+<div class="hero-image">
+<div class="hero-avatar">
+<img alt="Perro feliz" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-1108099.jpeg">
+<i class="fas fa-dog fallback-icon" style="display: none;"></i>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección Sobre Nosotros -->
+<section class="about" id="about">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Sobre Huellitas Alegres</h2>
+<p class="section-subtitle">Expertos en el cuidado y bienestar de tu mascota</p>
+</div>
+<div class="about-content">
+<div class="about-text">
+<p>
+                        En Huellitas Alegres, ubicados en el hermoso barrio Bocagrande de Cartagena,
+                        nos especializamos en brindar servicios integrales para el cuidado de tu mascota.
+                        Con años de experiencia y amor por los animales, garantizamos el mejor trato para tu compañero.
+                    </p>
+<p>
+                        Nuestro equipo está capacitado para ofrecer desde servicios básicos de estética
+                        hasta cuidados especializados. Cada mascota es única y merece atención personalizada,
+                        por eso adaptamos nuestros servicios a las necesidades específicas de tu perro.
+                    </p>
+<div class="skills">
+<div class="skill-item">
+<i class="fas fa-heart"></i>
+<span>Amor</span>
+</div>
+<div class="skill-item">
+<i class="fas fa-cut"></i>
+<span>Estética</span>
+</div>
+<div class="skill-item">
+<i class="fas fa-shield-alt"></i>
+<span>Cuidado</span>
+</div>
+<div class="skill-item">
+<i class="fas fa-stethoscope"></i>
+<span>Salud</span>
+</div>
+<div class="skill-item">
+<i class="fas fa-clock"></i>
+<span>Puntualidad</span>
+</div>
+<div class="skill-item">
+<i class="fas fa-star"></i>
+<span>Calidad</span>
+</div>
+</div>
+</div>
+<div class="about-stats">
+<div class="stat-item">
+<h3>500+</h3>
+<p>Mascotas Atendidas</p>
+</div>
+<div class="stat-item">
+<h3>5</h3>
+<p>Años de Experiencia</p>
+</div>
+<div class="stat-item">
+<h3>100%</h3>
+<p>Clientes Satisfechos</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección Servicios -->
+<section class="services" id="services">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Nuestros Servicios</h2>
+<p class="section-subtitle">Todo lo que tu mascota necesita en un solo lugar</p>
+</div>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">
+<i class="fas fa-shower"></i>
+</div>
+<h3>Baño y Secado</h3>
+<p>Baño completo con productos especializados, secado profesional y desenredado del pelaje.</p>
+<div class="service-price">$25,000</div>
+<ul class="service-features">
+<li><i class="fas fa-check"></i> Shampoo premium</li>
+<li><i class="fas fa-check"></i> Secado profesional</li>
+<li><i class="fas fa-check"></i> Desenredado completo</li>
+<li><i class="fas fa-check"></i> Aromatización</li>
+</ul>
+<button class="add-to-cart" onclick="addToCart(&#39;bano-secado&#39;, &#39;Baño y Secado&#39;, 25000, &#39;https://as1.ftcdn.net/jpg/09/76/29/28/1000_F_976292830_6bkdmJg9ifJsEZSA2YGNQuQeW9pT4R3P.jpg&#39;)">
+<i class="fas fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<i class="fas fa-cut"></i>
+</div>
+<h3>Corte y Estilismo</h3>
+<p>Cortes personalizados según la raza y preferencias del dueño. Estilismo profesional.</p>
+<div class="service-price">$35,000</div>
+<ul class="service-features">
+<li><i class="fas fa-check"></i> Corte personalizado</li>
+<li><i class="fas fa-check"></i> Estilismo profesional</li>
+<li><i class="fas fa-check"></i> Limpieza de oídos</li>
+<li><i class="fas fa-check"></i> Corte de uñas</li>
+</ul>
+<button class="add-to-cart" onclick="addToCart(&#39;corte-estilismo&#39;, &#39;Corte y Estilismo&#39;, 35000, &#39;https://images.pexels.com/photos/19145876/pexels-photo-19145876/free-photo-of-dog-getting-professional-haircut.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2&#39;)">
+<i class="fas fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<i class="fas fa-hand-holding-heart"></i>
+</div>
+<h3>Cuidado de Uñas</h3>
+<p>Corte y limado de uñas profesional para mantener la salud y comodidad de tu mascota.</p>
+<div class="service-price">$15,000</div>
+<ul class="service-features">
+<li><i class="fas fa-check"></i> Corte profesional</li>
+<li><i class="fas fa-check"></i> Limado suave</li>
+<li><i class="fas fa-check"></i> Revisión de almohadillas</li>
+<li><i class="fas fa-check"></i> Cuidado especializado</li>
+</ul>
+<button class="add-to-cart" onclick="addToCart(&#39;cuidado-unas&#39;, &#39;Cuidado de Uñas&#39;, 15000, &#39;https://cdn.shopify.com/s/files/1/0635/6585/7004/files/The_Importance_of_Nail_Care_480x480.png?v=1692085956&#39;)">
+<i class="fas fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<i class="fas fa-stethoscope"></i>
+</div>
+<h3>Consulta Veterinaria</h3>
+<p>Revisiones generales, vacunación y consultas básicas para mantener la salud de tu perro.</p>
+<div class="service-price">$50,000</div>
+<ul class="service-features">
+<li><i class="fas fa-check"></i> Examen físico completo</li>
+<li><i class="fas fa-check"></i> Diagnóstico profesional</li>
+<li><i class="fas fa-check"></i> Plan de tratamiento</li>
+<li><i class="fas fa-check"></i> Seguimiento incluido</li>
+</ul>
+<button class="add-to-cart" onclick="addToCart(&#39;consulta-veterinaria&#39;, &#39;Consulta Veterinaria&#39;, 50000, &#39;https://as1.ftcdn.net/v2/jpg/03/57/26/98/1000_F_357269844_HVZbIgEOnTjS7tVV9VemIIol8xKbt821.jpg&#39;)">
+<i class="fas fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<i class="fas fa-home"></i>
+</div>
+<h3>Servicio a Domicilio</h3>
+<p>Llevamos nuestros servicios hasta tu hogar para mayor comodidad de tu mascota.</p>
+<div class="service-price">$40,000</div>
+<ul class="service-features">
+<li><i class="fas fa-check"></i> Comodidad en casa</li>
+<li><i class="fas fa-check"></i> Menos estrés para tu mascota</li>
+<li><i class="fas fa-check"></i> Servicio personalizado</li>
+<li><i class="fas fa-check"></i> Horarios flexibles</li>
+</ul>
+<button class="add-to-cart" onclick="addToCart(&#39;servicio-domicilio&#39;, &#39;Servicio a Domicilio&#39;, 40000, &#39;https://www.mobiledoggroominginc.ca/wp-content/uploads/2024/08/Why-Choose-Us.jpg&#39;)">
+<i class="fas fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<i class="fas fa-clock"></i>
+</div>
+<h3>Cuidado Temporal</h3>
+<p>Guardería y cuidado temporal para cuando necesites dejar a tu mascota en buenas manos.</p>
+<div class="service-price">$30,000</div>
+<ul class="service-features">
+<li><i class="fas fa-check"></i> Supervisión constante</li>
+<li><i class="fas fa-check"></i> Actividades recreativas</li>
+<li><i class="fas fa-check"></i> Alimentación incluida</li>
+<li><i class="fas fa-check"></i> Socialización</li>
+</ul>
+<button class="add-to-cart" onclick="addToCart(&#39;cuidado-temporal&#39;, &#39;Cuidado Temporal&#39;, 30000, &#39;https://s3-prod.dogtopia.com/wp-content/uploads/sites/200/2017/05/Daycare-playroom.jpg&#39;)">
+<i class="fas fa-cart-plus"></i> Agregar al Carrito
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección Tienda -->
+<section class="shop" id="shop">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Tienda de Productos</h2>
+<p class="section-subtitle">Todo lo que tu mascota necesita en un solo lugar</p>
+</div>
+<div class="shop-categories">
+<button class="category-filter active" data-category="all">Todos</button>
+<button class="category-filter" data-category="collares">Collares</button>
+<button class="category-filter" data-category="ropa">Ropa</button>
+<button class="category-filter" data-category="comida">Comida</button>
+<button class="category-filter" data-category="juguetes">Juguetes</button>
+<button class="category-filter" data-category="accesorios">Accesorios</button>
+<button class="category-filter" data-category="higiene">Higiene</button>
+</div>
+<div class="shop-grid">
+<!-- Collares -->
+<div class="product-card" data-category="collares">
+<div class="product-image">
+<img alt="Collar de Cuero Premium" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/Leather-Dog-Collar.jpg">
+<i class="fas fa-link fallback-icon" style="display: none;"></i>
+<div class="product-badge">Nuevo</div>
+</div>
+<div class="product-info">
+<div class="product-category">Collares</div>
+<h3 class="product-name">Collar de Cuero Premium</h3>
+<p class="product-description">Collar de cuero genuino con hebilla resistente. Disponible en varios tamaños y colores.</p>
+<div class="product-price">
+<span class="price-current">$35,000</span>
+<span class="price-original">$45,000</span>
+</div>
+<div class="product-actions">
+<button class="btn-cart" onclick="addToCart(&#39;collar-cuero&#39;, &#39;Collar de Cuero Premium&#39;, 35000, &#39;https://www.monkoodog.com/wp-content/uploads/2021/12/Leather-Dog-Collar.jpg&#39;)">
+<i class="fas fa-shopping-cart"></i>
+                                Agregar
+                            </button>
+<button class="btn-wishlist">
+<i class="fas fa-heart"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="collares">
+<div class="product-image">
+<img alt="Correa Retráctil" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-1805164.jpeg">
+<i class="fas fa-link fallback-icon" style="display: none;"></i>
+</div>
+<div class="product-info">
+<div class="product-category">Collares</div>
+<h3 class="product-name">Correa Retráctil</h3>
+<p class="product-description">Correa retráctil de 5 metros con sistema de frenado automático y mango ergonómico.</p>
+<div class="product-price">
+<span class="price-current">$42,000</span>
+</div>
+<div class="product-actions">
+<button class="btn-cart" onclick="addToCart(&#39;correa-retractil&#39;, &#39;Correa Retráctil&#39;, 42000, &#39;https://www.dogster.com/wp-content/uploads/2022/01/Flexi-Classic-Nylon-Tape-Retractable-Dog-Leash-2024-e1719501964322.jpg&#39;)">
+<i class="fas fa-shopping-cart"></i>
+                                Agregar
+                            </button>
+<button class="btn-wishlist">
+<i class="fas fa-heart"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Ropa -->
+<div class="product-card" data-category="ropa">
+<div class="product-image">
+<img alt="Suéter Abrigado" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-1851164.jpeg">
+<i class="fas fa-tshirt fallback-icon" style="display: none;"></i>
+</div>
+<div class="product-info">
+<div class="product-category">Ropa</div>
+<h3 class="product-name">Suéter Abrigado</h3>
+<p class="product-description">Suéter cómodo y cálido para los días fríos. Material suave y transpirable.</p>
+<div class="product-price">
+<span class="price-current">$28,000</span>
+</div>
+<div class="product-actions">
+<button class="btn-cart" onclick="addToCart(&#39;sueter-abrigado&#39;, &#39;Suéter Abrigado&#39;, 28000, &#39;https://pitbulloutfitters.com/cdn/shop/products/large-dog-sweater-red-dog.jpg?v=1666102567&amp;width=500&#39;)">
+<i class="fas fa-shopping-cart"></i>
+                                Agregar
+                            </button>
+<button class="btn-wishlist">
+<i class="fas fa-heart"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Comida -->
+<div class="product-card" data-category="comida">
+<div class="product-image">
+<img alt="Alimento Premium" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-1458916.jpeg">
+<i class="fas fa-bone fallback-icon" style="display: none;"></i>
+<div class="product-badge">Bestseller</div>
+</div>
+<div class="product-info">
+<div class="product-category">Comida</div>
+<h3 class="product-name">Alimento Premium (15kg)</h3>
+<p class="product-description">Alimento balanceado de alta calidad con proteínas naturales y vitaminas esenciales.</p>
+<div class="product-price">
+<span class="price-current">$85,000</span>
+<span class="price-original">$95,000</span>
+</div>
+<div class="product-actions">
+<button class="btn-cart" onclick="addToCart(&#39;alimento-premium&#39;, &#39;Alimento Premium (15kg)&#39;, 85000, &#39;https://m.media-amazon.com/images/I/51jN9eReGwS.jpg&#39;)">
+<i class="fas fa-shopping-cart"></i>
+                                Agregar
+                            </button>
+<button class="btn-wishlist">
+<i class="fas fa-heart"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="comida">
+<div class="product-image">
+<img alt="Snacks Naturales" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-1458925.jpeg">
+<i class="fas fa-cookie-bite fallback-icon" style="display: none;"></i>
+</div>
+<div class="product-info">
+<div class="product-category">Comida</div>
+<h3 class="product-name">Snacks Naturales</h3>
+<p class="product-description">Premios naturales sin conservantes artificiales. Perfectos para entrenamiento.</p>
+<div class="product-price">
+<span class="price-current">$15,000</span>
+</div>
+<div class="product-actions">
+<button class="btn-cart" onclick="addToCart(&#39;snacks-naturales&#39;, &#39;Snacks Naturales&#39;, 15000, &#39;https://naturaltreats.eu/wp-content/uploads/2021/12/Club-Box-February.jpg&#39;)">
+<i class="fas fa-shopping-cart"></i>
+                                Agregar
+                            </button>
+<button class="btn-wishlist">
+<i class="fas fa-heart"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Juguetes -->
+<div class="product-card" data-category="juguetes">
+<div class="product-image">
+<img alt="Pelota Interactiva" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-1629781.jpeg">
+<i class="fas fa-baseball-ball fallback-icon" style="display: none;"></i>
+</div>
+<div class="product-info">
+<div class="product-category">Juguetes</div>
+<h3 class="product-name">Pelota Interactiva</h3>
+<p class="product-description">Pelota resistente con sonido que mantiene a tu perro entretenido y activo.</p>
+<div class="product-price">
+<span class="price-current">$18,000</span>
+</div>
+<div class="product-actions">
+<button class="btn-cart" onclick="addToCart(&#39;pelota-interactiva&#39;, &#39;Pelota Interactiva&#39;, 18000, &#39;https://m.media-amazon.com/images/I/61veEGQJViL._AC_SL1001_.jpg&#39;)">
+<i class="fas fa-shopping-cart"></i>
+                                Agregar
+                            </button>
+<button class="btn-wishlist">
+<i class="fas fa-heart"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="product-card" data-category="juguetes">
+<div class="product-image">
+<img alt="Cuerda de Juego" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-1629236.jpeg">
+<i class="fas fa-rope fallback-icon" style="display: none;"></i>
+</div>
+<div class="product-info">
+<div class="product-category">Juguetes</div>
+<h3 class="product-name">Cuerda de Juego</h3>
+<p class="product-description">Cuerda resistente de algodón natural para juegos de tirar y limpiar dientes.</p>
+<div class="product-price">
+<span class="price-current">$12,000</span>
+</div>
+<div class="product-actions">
+<button class="btn-cart" onclick="addToCart(&#39;cuerda-juego&#39;, &#39;Cuerda de Juego&#39;, 12000, &#39;https://www.durapawbox.com/cdn/shop/products/RopeToyforDogCanada_1080x.jpg?v=1681077170&#39;)">
+<i class="fas fa-shopping-cart"></i>
+                                Agregar
+                            </button>
+<button class="btn-wishlist">
+<i class="fas fa-heart"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Accesorios -->
+<div class="product-card" data-category="accesorios">
+<div class="product-image">
+<img alt="Cama Ortopédica" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-1851164.jpeg">
+<i class="fas fa-bed fallback-icon" style="display: none;"></i>
+<div class="product-badge">Oferta</div>
+</div>
+<div class="product-info">
+<div class="product-category">Accesorios</div>
+<h3 class="product-name">Cama Ortopédica</h3>
+<p class="product-description">Cama cómoda con soporte ortopédico para el descanso perfecto de tu mascota.</p>
+<div class="product-price">
+<span class="price-current">$65,000</span>
+<span class="price-original">$80,000</span>
+</div>
+<div class="product-actions">
+<button class="btn-cart" onclick="addToCart(&#39;cama-ortopedica&#39;, &#39;Cama Ortopédica&#39;, 65000, &#39;https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000&amp;q=80&#39;)">
+<i class="fas fa-shopping-cart"></i>
+                                Agregar
+                            </button>
+<button class="btn-wishlist">
+<i class="fas fa-heart"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Higiene -->
+<div class="product-card" data-category="higiene">
+<div class="product-image">
+<img alt="Shampoo Especializado" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-4587998.jpeg">
+<i class="fas fa-pump-soap fallback-icon" style="display: none;"></i>
+<div class="product-badge">Popular</div>
+</div>
+<div class="product-info">
+<div class="product-category">Higiene</div>
+<h3 class="product-name">Shampoo Especializado</h3>
+<p class="product-description">Shampoo hipoalergénico con ingredientes naturales. Ideal para pieles sensibles.</p>
+<div class="product-price">
+<span class="price-current">$24,000</span>
+</div>
+<div class="product-actions">
+<button class="btn-cart" onclick="addToCart(&#39;shampoo-especializado&#39;, &#39;Shampoo Especializado&#39;, 24000, &#39;https://images.pexels.com/photos/4587998/pexels-photo-4587998.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000&amp;q=80&#39;)">
+<i class="fas fa-shopping-cart"></i>
+                                Agregar
+                            </button>
+<button class="btn-wishlist">
+<i class="fas fa-heart"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección Precios -->
+<section class="prices" id="prices">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Nuestros Precios</h2>
+<p class="section-subtitle">Servicios de calidad a precios justos</p>
+</div>
+<div class="prices-grid">
+<div class="price-card">
+<div class="price-header">
+<h3>Básico</h3>
+<div class="price">
+<span class="currency">$</span>
+<span class="amount">25,000</span>
+</div>
+<p class="price-description">Perfecto para el cuidado esencial</p>
+</div>
+<ul class="price-features">
+<li><i class="fas fa-check"></i> Baño completo</li>
+<li><i class="fas fa-check"></i> Secado profesional</li>
+<li><i class="fas fa-check"></i> Desenredado básico</li>
+<li><i class="fas fa-check"></i> Limpieza de oídos</li>
+</ul>
+<a class="btn btn-outline" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#contact">Reservar</a>
+</div>
+<div class="price-card featured">
+<div class="price-badge">Más Popular</div>
+<div class="price-header">
+<h3>Completo</h3>
+<div class="price">
+<span class="currency">$</span>
+<span class="amount">45,000</span>
+</div>
+<p class="price-description">El paquete más solicitado</p>
+</div>
+<ul class="price-features">
+<li><i class="fas fa-check"></i> Todo del paquete básico</li>
+<li><i class="fas fa-check"></i> Corte personalizado</li>
+<li><i class="fas fa-check"></i> Corte de uñas</li>
+<li><i class="fas fa-check"></i> Limpieza dental básica</li>
+<li><i class="fas fa-check"></i> Perfume para mascotas</li>
+</ul>
+<a class="btn btn-primary" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#contact">Reservar</a>
+</div>
+<div class="price-card">
+<div class="price-header">
+<h3>Premium</h3>
+<div class="price">
+<span class="currency">$</span>
+<span class="amount">65,000</span>
+</div>
+<p class="price-description">Experiencia de lujo total</p>
+</div>
+<ul class="price-features">
+<li><i class="fas fa-check"></i> Todo del paquete completo</li>
+<li><i class="fas fa-check"></i> Tratamiento de spa</li>
+<li><i class="fas fa-check"></i> Masaje relajante</li>
+<li><i class="fas fa-check"></i> Consulta veterinaria</li>
+<li><i class="fas fa-check"></i> Sesión de fotos</li>
+</ul>
+<a class="btn btn-outline" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#contact">Reservar</a>
+</div>
+</div>
+<div class="additional-services">
+<h3>Servicios Adicionales</h3>
+<div class="additional-grid">
+<div class="additional-item">
+<span class="service-name">Servicio a Domicilio</span>
+<span class="service-price">+$10,000</span>
+</div>
+<div class="additional-item">
+<span class="service-name">Cuidado Temporal (por día)</span>
+<span class="service-price">$20,000</span>
+</div>
+<div class="additional-item">
+<span class="service-name">Consulta Veterinaria</span>
+<span class="service-price">$35,000</span>
+</div>
+<div class="additional-item">
+<span class="service-name">Vacunación</span>
+<span class="service-price">$25,000</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección Galería -->
+<section class="portfolio" id="gallery">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Galería de Nuestros Clientes</h2>
+<p class="section-subtitle">Mascotas felices y bien cuidadas</p>
+</div>
+<div class="portfolio-grid">
+<div class="portfolio-item">
+<div class="portfolio-image">
+<img alt="Max - Golden Retriever" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-1108099(1).jpeg">
+<i class="fas fa-dog fallback-icon" style="display: none;"></i>
+<div class="portfolio-overlay">
+<div class="portfolio-info">
+<h4>Max - Golden Retriever</h4>
+<p>Después de su sesión de spa completa</p>
+</div>
+</div>
+</div>
+</div>
+<div class="portfolio-item">
+<div class="portfolio-image">
+<img alt="Luna - Poodle" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-1851164.jpeg">
+<i class="fas fa-dog fallback-icon" style="display: none;"></i>
+<div class="portfolio-overlay">
+<div class="portfolio-info">
+<h4>Luna - Poodle</h4>
+<p>Corte estilizado y adorable</p>
+</div>
+</div>
+</div>
+</div>
+<div class="portfolio-item">
+<div class="portfolio-image">
+<img alt="Rocky - Pastor Alemán" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-1390361.jpeg">
+<i class="fas fa-dog fallback-icon" style="display: none;"></i>
+<div class="portfolio-overlay">
+<div class="portfolio-info">
+<h4>Rocky - Pastor Alemán</h4>
+<p>Feliz después de su cuidado</p>
+</div>
+</div>
+</div>
+</div>
+<div class="portfolio-item">
+<div class="portfolio-image">
+<img alt="Bella - Labrador" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-1629781.jpeg">
+<i class="fas fa-dog fallback-icon" style="display: none;"></i>
+<div class="portfolio-overlay">
+<div class="portfolio-info">
+<h4>Bella - Labrador</h4>
+<p>Relajada después del masaje</p>
+</div>
+</div>
+</div>
+</div>
+<div class="portfolio-item">
+<div class="portfolio-image">
+<img alt="Charlie - Bulldog" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-4587998.jpeg">
+<i class="fas fa-dog fallback-icon" style="display: none;"></i>
+<div class="portfolio-overlay">
+<div class="portfolio-info">
+<h4>Charlie - Bulldog</h4>
+<p>Luciendo su nuevo corte</p>
+</div>
+</div>
+</div>
+</div>
+<div class="portfolio-item">
+<div class="portfolio-image">
+<img alt="Mia - Chihuahua" onerror="this.style.display=&#39;none&#39;; this.nextElementSibling.style.display=&#39;flex&#39;;" src="./Huellitas Alegres 1_files/pexels-photo-1458916.jpeg">
+<i class="fas fa-dog fallback-icon" style="display: none;"></i>
+<div class="portfolio-overlay">
+<div class="portfolio-info">
+<h4>Mia - Chihuahua</h4>
+<p>Pequeña pero con gran estilo</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección Contacto -->
+<section class="contact" id="contact">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Contacto</h2>
+<p class="section-subtitle">¡Agenda una cita para tu mascota!</p>
+</div>
+<div class="contact-content">
+<div class="contact-info">
+<div class="contact-item">
+<div class="contact-icon">
+<i class="fas fa-user"></i>
+</div>
+<div class="contact-details">
+<h4>Propietario</h4>
+<p>Dewin Luna</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">
+<i class="fas fa-phone"></i>
+</div>
+<div class="contact-details">
+<h4>Teléfono / WhatsApp</h4>
+<p>310 411 9101</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">
+<i class="fas fa-map-marker-alt"></i>
+</div>
+<div class="contact-details">
+<h4>Ubicación</h4>
+<p>Bocagrande, Cartagena</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">
+<i class="fas fa-clock"></i>
+</div>
+<div class="contact-details">
+<h4>Horarios</h4>
+<p>Lun - Sáb: 8:00 AM - 6:00 PM</p>
+</div>
+</div>
+<div class="social-links">
+<a class="social-link whatsapp" href="https://wa.me/573104119101" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+<a class="social-link" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#"><i class="fab fa-facebook"></i></a>
+<a class="social-link" href="https://8080-ilf8hrsxux3wsyfjg8uzc.e2b.dev/index.html#"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+<form class="contact-form">
+<div class="form-group">
+<input id="name" name="name" placeholder="Tu nombre" required="" type="text">
+</div>
+<div class="form-group">
+<input id="phone" name="phone" placeholder="Tu teléfono" required="" type="tel">
+</div>
+<div class="form-group">
+<input id="pet-name" name="pet-name" placeholder="Nombre de tu mascota" required="" type="text">
+</div>
+<div class="form-group">
+<select id="service" name="service" required="">
+<option value="">Selecciona un servicio</option>
+<option value="basico">Paquete Básico - $25,000</option>
+<option value="completo">Paquete Completo - $45,000</option>
+<option value="premium">Paquete Premium - $65,000</option>
+<option value="domicilio">Servicio a Domicilio</option>
+<option value="veterinaria">Consulta Veterinaria</option>
+<option value="productos">Productos de la Tienda</option>
+</select>
+</div>
+<div class="form-group">
+<textarea id="message" name="message" placeholder="Cuéntanos sobre tu mascota y cuándo te gustaría agendar" required="" rows="4"></textarea>
+</div>
+<button class="btn btn-primary" type="submit">Enviar Solicitud</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-info">
+<div class="footer-logo">
+<i class="fas fa-paw"></i>
+<span>Huellitas Alegres</span>
+</div>
+<p>Cuidado profesional y amor para tu mejor amigo</p>
+<div class="footer-contact">
+<p><strong>Dewin Luna</strong></p>
+<p><i class="fas fa-phone"></i> 310 411 9101</p>
+<p><i class="fas fa-map-marker-alt"></i> Bocagrande, Cartagena</p>
+</div>
+</div>
+<div class="footer-paws">
+<i class="fas fa-paw paw-1"></i>
+<i class="fas fa-paw paw-2"></i>
+<i class="fas fa-paw paw-3"></i>
+<i class="fas fa-paw paw-4"></i>
+<i class="fas fa-paw paw-5"></i>
+</div>
+<div class="footer-bottom">
+<p>© 2024 Huellitas Alegres. Todos los derechos reservados.</p>
+<p>Hecho con ❤️ para los amantes de las mascotas</p>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Variables globales del carrito
+        let cart = [];
+        
+        // DEBUGGING - Verificar que todo esté cargado
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 PÁGINA CARGADA - Iniciando carrito');
+            console.log('🛒 Carrito inicial:', cart);
+            
+            // Verificar que todos los elementos existen
+            const cartIcon = document.getElementById('cartIcon');
+            const cartCount = document.getElementById('cartCount');
+            const cartSidebar = document.getElementById('cartSidebar');
+            const cartItems = document.getElementById('cartItems');
+            
+            console.log('🔍 Elementos encontrados:');
+            console.log('- cartIcon:', cartIcon ? '✅' : '❌');
+            console.log('- cartCount:', cartCount ? '✅' : '❌');
+            console.log('- cartSidebar:', cartSidebar ? '✅' : '❌');
+            console.log('- cartItems:', cartItems ? '✅' : '❌');
+        });
+
+        // Navegación móvil
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Cambiar estilo de navegación al hacer scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Filtros de la tienda
+        document.addEventListener('DOMContentLoaded', () => {
+            const categoryFilters = document.querySelectorAll('.category-filter');
+            const productCards = document.querySelectorAll('.product-card');
+
+            categoryFilters.forEach(filter => {
+                filter.addEventListener('click', () => {
+                    // Remover clase active de todos los filtros
+                    categoryFilters.forEach(f => f.classList.remove('active'));
+                    // Agregar clase active al filtro clickeado
+                    filter.classList.add('active');
+
+                    const category = filter.getAttribute('data-category');
+
+                    productCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeIn 0.5s ease';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        // CARRITO DE COMPRAS - VERSIÓN SIMPLIFICADA Y FUNCIONAL
+        function addToCart(id, name, price, imageUrl) {
+            console.log('🛒 FUNCIÓN ADDTOCART LLAMADA');
+            console.log('📦 Datos recibidos:', { id, name, price, imageUrl });
+
+            try {
+                // Buscar si el producto ya existe
+                const existingItem = cart.find(item => item.id === id);
+
+                if (existingItem) {
+                    // Si existe, aumentar cantidad
+                    existingItem.quantity += 1;
+                    console.log('✅ Cantidad actualizada:', existingItem);
+                } else {
+                    // Si no existe, agregar nuevo
+                    const newItem = {
+                        id: id,
+                        name: name,
+                        price: parseInt(price),
+                        imageUrl: imageUrl || '',
+                        quantity: 1
+                    };
+                    cart.push(newItem);
+                    console.log('✅ Producto agregado:', newItem);
+                }
+
+                console.log('🛒 CARRITO COMPLETO:', cart);
+                console.log('📊 TOTAL DE PRODUCTOS:', cart.length);
+
+                // Actualizar contador INMEDIATAMENTE
+                updateCartCounter();
+                
+                // Actualizar interfaz del carrito
+                updateCartDisplay();
+                
+                // Mostrar notificación
+                showNotification(`${name} agregado al carrito`, 'success');
+                
+            } catch (error) {
+                console.error('❌ ERROR en addToCart:', error);
+            }
+        }
+
+        // Función separada para actualizar solo el contador
+        function updateCartCounter() {
+            const cartCount = document.getElementById('cartCount');
+            if (!cartCount) {
+                console.error('❌ No se encontró el elemento cartCount');
+                return;
+            }
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            if (totalItems > 0) {
+                cartCount.style.display = 'flex';
+            } else {
+                cartCount.style.display = 'none';
+            }
+            
+            console.log('🔢 CONTADOR ACTUALIZADO:', totalItems);
+        }
+
+        // Función separada para actualizar la visualización del carrito
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cartItems');
+            const cartFooter = document.getElementById('cartFooter');
+            const cartTotal = document.getElementById('cartTotal');
+
+            if (!cartItems || !cartFooter || !cartTotal) {
+                console.error('❌ No se encontraron elementos del carrito');
+                return;
+            }
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<div class="cart-empty"><i class="fas fa-shopping-cart"></i><p>Tu carrito está vacío</p></div>';
+                cartFooter.style.display = 'none';
+            } else {
+                cartFooter.style.display = 'block';
+                
+                let cartHTML = '';
+                cart.forEach((item) => {
+                    cartHTML += `
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="${item.imageUrl}" alt="${item.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <i class="fas fa-paw fallback-icon" style="display: none;"></i>
+                            </div>
+                            <div class="cart-item-info">
+                                <div class="cart-item-name">${item.name}</div>
+                                <div class="cart-item-price">$${item.price.toLocaleString()}</div>
+                                <div class="cart-item-controls">
+                                    <button class="quantity-btn" onclick="updateQuantity('${item.id}', -1)">-</button>
+                                    <span class="quantity-display">${item.quantity}</span>
+                                    <button class="quantity-btn" onclick="updateQuantity('${item.id}', 1)">+</button>
+                                    <button class="remove-item" onclick="removeFromCart('${item.id}')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                cartItems.innerHTML = cartHTML;
+
+                const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                cartTotal.textContent = `$${total.toLocaleString()}`;
+            }
+        }
+
+        // Función unificada para actualizar todo el carrito
+        function updateCartUI() {
+            console.log('🔄 ACTUALIZANDO UI COMPLETA DEL CARRITO');
+            updateCartCounter();
+            updateCartDisplay();
+        }
+
+        function updateQuantity(id, change) {
+            console.log('🔄 Actualizando cantidad:', id, change);
+            const item = cart.find(item => item.id === id);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(id);
+                } else {
+                    updateCartCounter();
+                    updateCartDisplay();
+                }
+            }
+        }
+
+        function removeFromCart(id) {
+            console.log('🗑️ Eliminando producto:', id);
+            cart = cart.filter(item => item.id !== id);
+            updateCartCounter();
+            updateCartDisplay();
+            showNotification('Producto eliminado del carrito', 'info');
+        }
+
+        // Controles del carrito
+        document.getElementById('cartIcon').addEventListener('click', () => {
+            document.getElementById('cartSidebar').classList.add('active');
+            document.getElementById('cartOverlay').classList.add('active');
+        });
+
+        document.getElementById('cartClose').addEventListener('click', () => {
+            document.getElementById('cartSidebar').classList.remove('active');
+            document.getElementById('cartOverlay').classList.remove('active');
+        });
+
+        document.getElementById('cartOverlay').addEventListener('click', () => {
+            document.getElementById('cartSidebar').classList.remove('active');
+            document.getElementById('cartOverlay').classList.remove('active');
+        });
+
+        // Checkout por WhatsApp
+        document.getElementById('cartCheckout').addEventListener('click', () => {
+            if (cart.length === 0) return;
+
+            let message = '¡Hola! Me gustaría hacer un pedido:\n\n';
+            let total = 0;
+
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                message += `• ${item.name}\n  Cantidad: ${item.quantity}\n  Precio: $${item.price.toLocaleString()}\n  Subtotal: $${subtotal.toLocaleString()}\n\n`;
+                total += subtotal;
+            });
+
+            message += `💰 TOTAL: $${total.toLocaleString()}\n\n`;
+            message += '¿Podrían confirmar disponibilidad y tiempo de entrega?';
+
+            const whatsappURL = `https://wa.me/573104119101?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        });
+
+        // Sistema de notificaciones
+        function showNotification(message, type = 'info') {
+            // Remover notificación existente
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            // Crear nueva notificación
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+
+            document.body.appendChild(notification);
+
+            // Mostrar notificación
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+
+            // Ocultar después de 3 segundos
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        // Formulario de contacto
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const petName = document.getElementById('pet-name').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappMessage = `¡Hola! Soy ${name} y me gustaría agendar una cita para mi mascota.\n\n` +
+                                  `📱 Mi teléfono: ${phone}\n` +
+                                  `🐕 Nombre de mi mascota: ${petName}\n` +
+                                  `🎯 Servicio solicitado: ${service}\n\n` +
+                                  `💬 Mensaje adicional:\n${message}`;
+
+            const whatsappURL = `https://wa.me/573104119101?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappURL, '_blank');
+        });
+
+        // Animaciones CSS adicionales
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        console.log('✅ CARRITO INICIALIZADO CORRECTAMENTE');
+        
+        
+    </script>
+
+</body></html>
